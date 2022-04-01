@@ -13,355 +13,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
 
-    <style>
-        body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  overflow-x: hidden;
-  
-}
+    <link href="{{ url_for('static', filename='trials.css') }}" rel="stylesheet">  
 
-.site-logo {
-  font-weight: 900;
-  font-size: 1.5rem;
-  color: var(--text);
-  text-decoration: none;
-}
-
-.site-logo span {
-  color: var(--text-inverse);
-  font-weight: 200;
-}
-
-header {
-  --text: #eee;
-  --text-inverse: cornflowerblue;
-  --background: transparent;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2em 10em;
-  transition: background 250ms ease-in;
-  background: var(--background);
-  color: var(--text);
-  height: 80px;
-}
-
-.nav__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.nav__link {
-  --spacing: 1em;
-  text-decoration: none;
-  color: inherit;
-  display: inline-block;
-  padding: calc(var(--spacing) / 2) var(--spacing);
-  position: relative;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.9rem;
-}
-
-.nav__link:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: var(--spacing);
-  right: var(--spacing);
-  height: 2px;
-  background: cornflowerblue;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  transition: -webkit-transform 150ms ease-in-out;
-  transition: transform 150ms ease-in-out;
-  transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
-}
-
-.nav__link:hover::after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-}
-
-.nav__link--btn {
-  border: 1.5px solid currentColor;
-  border-radius: 2em;
-  margin-left: 1em;
-  transition: background 250ms ease-in-out;
-  font-weight: 900;
-  letter-spacing: 1px;
-  padding: 0.75em 1.5em;
-}
-
-.nav__link--btn:hover {
-  background: var(--text);
-  color: var(--text-inverse);
-  border-color: var(--text);
-}
-
-.nav__link--btn::after {
-  display: none;
-}
-
-.nav__link--btn--highlight {
-  background: cornflowerblue;
-  border-color: cornflowerblue;
-  color: #333;
-}
-
-.nav__link--btn--highlight:hover {
-  background: var(--text);
-  border-color: var(--text);
-}
-
-.nav-scrolled {
-  --text: #333;
-  --text-inverse: cornflowerblue;
-  --background: #eee;
-  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
-}
-
-.home-intro {
-  padding: 45vh 0;
-  background: #123 url(https://www.securitymagazine.com/ext/resources/images/cybersecurity-freepik.jpg?1626304720s);
-  background-size: cover;
-  background-blend-mode: multiply;
-  font-size: 2rem;
-  color: cornflowerblue;
-  text-align: center;
-}
-
-.home-intro span {
-  color: #fff;
-  font-weight: 200;
-}
-
-.home-about {
-  padding: 4em 0;
-  max-width: 900px;
-  margin: 0 auto;
-  height: 500px;
-}
-
-.columns {
-  display: flex;
-  
-  padding-top: 70px;
-}
-
-.col + .col {
-  margin-left: 1.5em;
-}
-
-.fade-in {
-  opacity: 0;
-  transition: opacity 250ms ease-in;
-}
-
-.fade-in.appear {
-  opacity: 1;
-}
-
-.more-stuff-grid {
-  background: white;
-  padding: 4em 0;
-  display: grid;
-  grid-gap: 2em;
-  align-items: center;
-  grid-template-columns: minmax(1em, 1fr) repeat(2, minmax(200px, 400px)) minmax(1em, 1fr);
-  
-}
-
-.from-left, .from-right {
-  transition: opacity 400ms ease-in, transform 400ms ease-in;
-  opacity: 0;
-}
-
-.from-left.appear, .from-right.appear {
-  transform: translateX(0px);
-  opacity: 1;
-}
-
-.from-left {
-  text-align: right;
-  grid-column: 2 / 3;
-  transform: translateX(-50%);
-}
-
-.from-right {
-  grid-column: 3 / 4;
-  transform: translateX(50%);
-
-}
-
-footer {
-  background: gray;
-  color: #eee;
-  padding: 1rem;
-  text-align: center;
-}
-.foot{
-    align-items: center;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: gray;
-    color: white;
-    text-align: center;
-    height: 100px;
-    padding-top: 20px;
-    
-}
-  #checkout{
-    padding-top: 50px;
-    align-items: center;
-    align-self: center;
-    padding-left: 20%;
-    padding-right: 20%;
-    background-color: black;
-  }
-#flower{
-    height: 300px;
-    width: 300px;
-}
- .contain {
-   position: relative;
-   width: 1200px;
-   height: 350px;
-   margin: 240px auto;
-   
- }
- .contain .box {
-   position: relative;
-   width : calc(400px - 30px);
-   height: calc(350px - 30px);
-   background:gray;
-   float: left;
-   margin: 15px;
-   box-sizing: border-box;
-   overflow: hidden;
-   border-radius: 10px;
- }
- .contain .box .icon {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background:cornflowerblue;
-   transition: 0.5s;
-   z-index: 1;
- }
- .contain .box:hover .icon{
-   top: 20px;
-   left: calc(50% - 40px);
-   width: 80px;
-   height: 80px;
-   border-radius: 50%;
- }
- .contain .box .icon .fa {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate( -50% , -50%);
-   font-size: 120px;
-   transition: 0.5s;
-   color: black;
- }
- .contain .box:hover .icon .fa{
-   font-size: 40px;
- }
- .contain .box .content {
-   position: absolute;
-   top: 100%;
-   height: calc(100% - 100px);
-   text-align: center;
-   padding: 20px;
-   box-sizing: border-box;
-   transition: 0.5s;
-   opacity: 0;
- }
- .contain .box:hover .content{
-  top: 100px;
-  opacity: 1;
- }
- .contain .box .content h3{
-   margin: 0 0 10px;
-   padding: 0;
-   color: black;
-   font-size: 24px;
- }
- .contain .box .content p{
-   margin: 0;
-   padding: 0;
-   color: black;
-   font-size: 25px;
- }
-.scan{
-  height: 300px;
-  width: 100%;
-  color: black;
-  margin: auto;
-  padding-left: 20%;
-  padding-right: 20%;
-  
-}
-#url{
-  align-content: center;
-  margin: auto;
-  
-}
-.scan-button{
-  padding-left: 40%;
-  padding-right: 40%;
-}
-input[type=submit]{
-    background-color:blue;
-  border: none;
-  color: white;
-  padding: 10px 17px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 10px;
-}
-input[type=text]{
-    width: 70%;
-  padding: 8px 15px;
-  margin-left: 5%;
-  box-sizing: border-box;
-}
-.scroll{
-font-family: sans-serif;
- align-items: center;
-         
- transform: translateY(-50%);
- white-space: nowrap;
- font-size: 3em;
- text-align: center;
- padding-top: 150px;
- padding-bottom: 50px;
-      }
-#imag{
-  height: 300px;
-  width: 300px;;
-}
-#blue{
-  color: blue;
-}
-
-    </style>
   </head>
 
   <body>
@@ -527,7 +181,8 @@ If the victim user has privileged access within the application, then the attack
             Since our script double checks the URLs , there are no false positives in this case. Also the developers or users creating their website who are not aware of this security field are also  able to test  this kind of issues easily.
           </p>
          
-          <img id="imag" src="https://www.crn.com/resources/0264-11091b0a9b54-187990923acd-1000/cybersecurity-data-lock-blue.jpg">
+          <img id="imag" src="https://www.crn.com/resources/0264-11091b0a9b54-187990923acd-1000/cybersecurity-data-lock-blue.jpg" alt=""
+          class="slide-in from-right">
         </div>
        
       </div>
@@ -547,56 +202,61 @@ If the victim user has privileged access within the application, then the attack
                 <form>
                   <div class="row">
                     <div class="col-md-6 mb-3">
-                      <input  class="form-control" id="firstname" required>
                       <label for="firstname">
                         First Name
                       </label>
+                      <input  class="form-control" id="firstname" required placeholder="First Name">
+                     
                     </div>
                     <div class="col-md-6 mb-3">
-                       <input  class="form-control" id="lastname" required>
                       <label for="lastname">
                         Last Name
                       </label>
+                       <input  class="form-control" id="lastname" required placeholder="Last Name">
+                     
                     </div>
                     
                   </div>
                   <div class="mb-3">
-                    <input type="email" class="form-control" id="email">
                     <label for="email">
                       Email
                     </label>
+                    <input type="email" class="form-control" id="email" placeholder="Email">
+                    
                  </div>
                   <div class="mb-3">
-                    <input type='address' class="form-control" id="address">
                     <label for="address">
                       Address
                     </label>
+                    <input type='address' class="form-control" id="address" placeholder="Address">
+                   
                   </div>
                   <div class="mb-3">
-                    <textarea class="form-control" rows="5" id="comment"></textarea>
                     <label for="address">
                       Your comments
                     </label>
+                    <textarea class="form-control" rows="5" id="comment" placeholder="Comments"></textarea>
+                   
                   </div>
                   <div class="row">
                     <div class="col-md-6 mb-3">
-                      
+                      <label for="country">
+                        Country
+                      </label>  
                       <select class="custom-select d-block w-100 "id="country">
                         <option value="">Choose...</option>
                         <option value="India">India</option> 
                         <option value="Srilanka">Srilanka</option>
                          <option value="Nepal">Nepal</option>
                       </select>
-                      <label for="country">
-                        Country
-                      </label>  
+                     
                     </div>
                     <div class="col-md-6 mb-3">
-                      
-                      <input type='phonenumber' class="form-control" id="phonrnumber">
                       <label for="phonenumber">
                         Mobile Number
                       </label>
+                      <input type="tel" class="form-control" id="phonenumber" placeholder="Phone Number">
+                     
                     </div>
                     
                   </div>
@@ -613,7 +273,8 @@ If the victim user has privileged access within the application, then the attack
                     </label>
                   </div>
                   <div>
-                      
+                      <br>
+
                   </div>
                   <button class="btn btn-primary btn-lg btn-block " type="submit">
                     Submit
@@ -653,103 +314,6 @@ If the victim user has privileged access within the application, then the attack
             </div>
         </div>
     </footer>
-
-    <script>
-        const header = document.querySelector('header');
-const sectionOne = document.querySelector('.home-intro');
-
-const faders = document.querySelectorAll('.fade-in');
-const sliders = document.querySelectorAll('.slide-in');
-
-const sectionOneOptions = {
-    rootMargin: '-150px 0px 0px 0px'
-};
-
-const sectionOneObs = new IntersectionObserver(function(entries, sectionOneOptions) {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            header.classList.add('nav-scrolled');
-        }
-        else {
-            header.classList.remove('nav-scrolled');
-        }
-    });
-}, sectionOneOptions);
-
-sectionOneObs.observe(sectionOne);
-
-const appearOptions = {
-    // threshold: 1,    //  with threshold 1 sliders wont work as the entire section 
-                        //  has to be inside viewport and that cannot be with translaeX
-    threshold: 0,
-    rootMargin: '0px 0px -250px 0px'
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-    entries.forEach(entry => {
-        // to stop applying the effect on all elements even when they are not seen
-        if (!entry.isIntersecting) {
-            return;
-        }
-        else {
-            entry.target.classList.add('appear');
-            appearOnScroll.unobserve(entry.target)
-        }
-    });
-}, appearOptions);
-
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-});
-
-sliders.forEach(slider => {
-    appearOnScroll.observe(slider);
-});
-
-// ===================================================
-// lazy loading images
-
-const images = document.querySelectorAll('[data-src]');
-
-function preloadImage(img) {
-    const src = img.getAttribute('data-src');
-
-    if (!src) {
-        return;
-    }
-
-    img.src = src;
-}
-
-const imgOptions = {
-    threshold: 0,
-    rootMargin: '0px 0px 300px 0px'
-};
-
-const imgObserver = new IntersectionObserver((entries, imgObserver) => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            return;
-        }
-        else {
-            preloadImage(entry.target);
-            imgObserver.unobserve(entry.target);
-        }
-    });
-}, imgOptions);
-
-images.forEach(image => {
-    imgObserver.observe(image);
-});
-    </script>
-    <script
-    src="https://code.jquery.com/jquery-3.6.0.js"
-    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous"></script>
-    <script type="text/javascript">
-        $(document).on('scroll',function(){
-            $('h1').css("left", Math.max(1200 - 0.35*window.scrollY,100 )+"px");
-        })
-    </script>
+      <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>     
   </body>
 </html>
