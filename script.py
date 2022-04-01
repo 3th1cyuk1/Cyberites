@@ -26,3 +26,9 @@ def send_request(line):
 
 splitted_urls = split_file(file, payload)
 array_length = len(splitted_urls)
+
+for i in tqdm(range(array_length), desc="Working on it:", ascii=False, ncols=75):
+    line = splitted_urls[i]
+    send_request(line)
+
+print(colored("\nCompleted! We have finished\n", "green", attrs=['bold']))
