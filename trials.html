@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
 
-    <link href="{{ url_for('static', filename='trials.css') }}" rel="stylesheet">  
-
+    <link rel="stylesheet" type="text/css" href="trials.css">
   </head>
 
   <body>
@@ -39,29 +39,33 @@
           <li class="nav__list-item">
             <a class="nav__link nav__link--btn" href="/login">Login</a>
           </li>
-          <li class="nav__list-item">
-            <a
-              class="nav__link nav__link--btn nav__link--btn--highlight"
-              href="#"
-              >Join</a
-            >
-          </li>
+         
         </ul>
       </nav>
     </header>
 
     
-      <section class="home-intro">
+    <div class="overlay">
+
+      <video src="abc.mp4" type="video/mp4" id="video1" autoplay loop muted></video>
+    
+      <div class="inner">
         <h1> Access complete security to your domain. <br><span>Get your website bugfree and reliable!</span> </h1>
         <p>
             <a href="#scroll" class="btn btn-primary my-5 px-4 py-2">
               Scan now>>
             </a>
          </p>
+      </div>
+    
+    </div>
+
+    <section class="home-intro">
+       
       </section>
 
       <div class="home-about">
-        <center><h2><b>Key-Features</b></h2></center>
+        <h2><b>Key-Features</b></h2>
         <div class="columns">
           <div class="col fade-in">
             <h3 id="blue">Accuracy</h3>
@@ -96,16 +100,16 @@
           </h2>
         </div>
     <div class="query">
-      <center>
+      
 	<form action="run" method="post">
 	<input type=text name=url placeholder="domain.com">
 	<input type=submit value="SCAN">
-	</form></center> 
+	</form>
     </div>
       </div>
 
     <div id="why-cyberite">
-      <center><h1>Why Cyberite?</h1></center>
+      <h1>Why Cyberite?</h1>
     </div>
       <div class="contain" id="about">
         <div class="box">
@@ -314,6 +318,7 @@ If the victim user has privileged access within the application, then the attack
             </div>
         </div>
     </footer>
-      <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>     
+    <script src="script.js"> </script>
+    
   </body>
 </html>
